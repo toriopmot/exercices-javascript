@@ -58,24 +58,69 @@ function afficherMoitiePrix(array) {
   }
 }
 afficherMoitiePrix()
+
 // si tu peux, essaye aussi d'afficher celui à -20%
+function afficherRemisePrix(array) {
+  for(let element of nounourses){
+    console.log(element.name + ' à -20% est à ' + element.price * 0.8 / 100 + '€')
+  }
+}
+afficherRemisePrix()
 
-function afficherColorisDisponibles(array) {}
+function afficherColorisDisponibles(array) {
+  // let cpt = 0;
+  for(let element of nounourses){
+    console.log(element.name + ' est disponible en ' + element.colors.length  + ' couleurs')
+    // cpt += element.colors;
+  }
+}
+afficherColorisDisponibles()
 
-function afficherSuperieurTrente(array) {}
+function afficherSuperieurTrente(array) {
+  for(let element of nounourses){
+    if((element.price / 100) > 30) {
+      console.log(element.name + ' coûte plus de 30€' + ' (il est à ' + (element.price / 100) + '€)')
+    } else {
+      console.log(element.name + ' est abordable' + ' (il est à ' + (element.price / 100) + '€)')
+    }
+  }
+}
+afficherSuperieurTrente()
 // essayer une VARIANTE en affichant "abordable" si le prix est en dessous
 
-function afficherSommeDescriptions(array) {}
+
+function afficherSommeDescriptions(array) {
+  let sum = '';
+  nounourses.forEach(e => {
+      sum += e.description
+  });
+  console.log(sum);
+}
+afficherSommeDescriptions()
 // Attention, c'est bien la SOMME des descriptions qu'il faut afficher, pas les unes après les autres
 
-function afficherTroisiemeCouleurDispo(array) {}
+function afficherTroisiemeCouleurDispo(array) {
+  for(let element of nounourses){
+    if(element.colors[2] === undefined) {
+      console.log("Il n'existe pas de troisième couleur")
+    } else {
+        console.log(element.colors[2])
+    }
+  }
+}
+afficherTroisiemeCouleurDispo()
 // Attention: gérer les cas où aucune troisième couleur n'existe
 
-function addTenToAge(age) {}
-// should increase age passed as argument by 10.
-// Ex:
-let ageJulie = 12
-let agePaul = 24
-console.log(addTenToAge(ageJulie)) // should display 22
-console.log(addTenToAge(agePaul)) // should display 34
-// Help: use the note "What's an argument ?" to really get how arguments work
+// function addTenToAge(age) {
+//   for(let element of age){
+//     console.log(element.age + 10)
+//   }
+// }
+// addTenToAge()
+// // should increase age passed as argument by 10.
+// // Ex:
+// let ageJulie = 12
+// let agePaul = 24
+// console.log(addTenToAge(ageJulie)) // should display 22
+// console.log(addTenToAge(agePaul)) // should display 34
+// // Help: use the note "What's an argument ?" to really get how arguments work
